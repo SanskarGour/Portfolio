@@ -1,5 +1,5 @@
 import React from "react";
-import { FaTelegram, FaTelegramPlane } from "react-icons/fa";
+import { FaTelegramPlane } from "react-icons/fa";
 
 function Contact() {
   return (
@@ -48,7 +48,10 @@ function Contact() {
                 ></textarea>
               </div>
 
-              <div class="btn-hire-me absolute flex gap-[10px] left-[45%]" id="submit-btn">
+              <div
+                class="btn-hire-me absolute flex gap-[10px] left-[45%]"
+                id="submit-btn"
+              >
                 Send Message
                 <FaTelegramPlane />
               </div>

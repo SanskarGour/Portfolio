@@ -365,10 +365,9 @@ form{
   font-size: 5rem;
   font-weight: 600;
   user-select: none;
-  
   color: rgb(113, 115, 129);
   left: 10%;
-  bottom: 10%;
+  bottom: 20%;
   position: absolute;
 }
 

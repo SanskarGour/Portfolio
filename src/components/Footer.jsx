@@ -1,9 +1,7 @@
 import React from "react";
 import { FaEnvelope, FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
 
 function Footer() {
-  const navigate = useNavigate();
   return (
     <div className="footer">
       <div class="container footer-container">
@@ -22,10 +20,21 @@ function Footer() {
         </div>
 
         <div class="socials flex gap-[15px]">
+          <a href="https://www.linkedin.com/in/sanskar-gour/" target="_blank">
           <FaLinkedin className="text-2xl text-white"  />
+          </a>
+
+          <a href="https://github.com/SanskarGour" target="_blank">
           <FaGithub className="text-2xl text-white" />
+          </a>
+
+          <a href="https://www.instagram.com/sansxkar/" target="_blank">
           <FaInstagram className="text-2xl text-white" />
+          </a>
+
+          <a href="mailto:sanskargour1234@gmail.com" >
           <FaEnvelope className="text-2xl text-white" />
+          </a>
         </div>
       </div>
     </div>
