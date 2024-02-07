@@ -6,6 +6,8 @@ import p1_2 from "../Resources/projects/p1 2.png";
 import p1_3 from "../Resources/projects/p1 3.png";
 import p2 from "../Resources/projects/p2.png";
 import p2_2 from "../Resources/projects/p2 2.png";
+import p4_1 from "../Resources/projects/p4 1.png";
+import p4_2 from "../Resources/projects/p4 2.png";
 import { FaLock } from "react-icons/fa";
 
 function Projects() {
@@ -104,6 +106,33 @@ function Projects() {
 
             <div class="btn-grp">
               <a href="https://github.com/SanskarGour/Web-Development-Projects/tree/main/Plan-with-me" target="_blank">
+                <div class="btn-hire-me" id="btn">
+                  Github Link
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-white project-card mt-28 mb-10 mx-auto rounded-xl ">
+          <div class="project-number">04</div>
+
+          <div>
+            <img src={p4_1} className="p-5 h-[500px] w-[750px] absolute" />
+            <img src={p4_2} className="p-5 right-[30px] top-[50px] h-[380px] absolute" />
+          </div>
+
+          <div className="project-content">
+            <h2 class="project-skills-heading text-2xl font-bold">
+              Tic-Tak-Toe
+            </h2>
+
+            <p class="project-skills-sub-heading">
+              A fun game to play with your mates!
+            </p>
+
+            <div class="btn-grp">
+              <a href="https://github.com/SanskarGour/Web-Development-Projects/tree/main/Tic-tak-toe" target="_blank">
                 <div class="btn-hire-me" id="btn">
                   Github Link
                 </div>
