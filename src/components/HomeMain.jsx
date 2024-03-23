@@ -17,12 +17,12 @@ function HomeMain() {
           learn about my journey as a software developer.
         </p>
 
-        <div class="btn-hire-me" id="btn">
+        {/* <div class="btn-hire-me" id="btn">
           Hire me
-        </div>
+        </div> */}
       </div>
 
-      <div class="hero-section-right">
+      {/* <div class="hero-section-right">
         <div class="absolute icon icon-circle">
           <img src={circle} />
         </div>
@@ -42,7 +42,7 @@ function HomeMain() {
         <div class="user-img">
           <img src={user} />
         </div>
-      </div>
+      </div> */}
 
     </div>
   );

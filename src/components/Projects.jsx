@@ -21,9 +21,9 @@ function Projects() {
       className="w-[100%] pb-10 mt-[185px] bg-[#cecece] relative min-h-[500px] "
       id="projects"
     >
-      <p className="select-none absolute text-[#cecece] top-[-9rem] text-[8rem] font-semibold left-[80px]">
+      {/* <p className="select-none absolute text-[#cecece] top-[-9rem] text-[8rem] font-semibold left-[80px]">
         SANSKAR GOUR
-      </p>
+      </p> */}
 
       <p className="select-none text-[#0092ca] text-center py-10 text-[5rem] font-semibold">
         PROJECTS

@@ -1,20 +1,81 @@
-import React from "react";
-import logo from "../Resources/s logo.png"
+import React, { useContext } from "react";
+import logo from "../Resources/s logo.png";
+import { RxHamburgerMenu } from "react-icons/rx";
+import { AppContext } from "./context/AppContext";
+import { useNavigate } from "react-router-dom";
 
-function Navbar(){
-  return(
-    <div className="bg-[#222831] px-10 w-[80%] flex justify-between h-[3.25rem] mx-auto rounded-xl">
-      <div className="rounded-[10px] h-full w-max flex items-center justify-center">
-        <img src={logo} width="27px" className="rounded-[10px]"/>
-        <h1 className="text-white text-xl">ANSKAR GOUR</h1>
+function Navbar() {
+  const { sidebar, setSidebar } = useContext(AppContext);
+  const navigate = useNavigate();
+
+  function sidebarHandler() {
+    if (sidebar) {
+      setSidebar(false);
+    } else {
+      setSidebar(true);
+    }
+  }
+
+  return (
+    <nav className="navbar-main mx-auto select-none relative">
+      <div className="h-full flex items-center ml-7 justify-center relative">
+        {/* logo and icon */}
+        <div className="w-[1rem] flex justify-center items-center rounded-full relative">
+          <img src={logo} width="100%" />
+        </div>
+
+        <h1 className="font-medium text-[0.8rem] lg:text-[1rem]  relative">
+          ANSKAR GOUR
+        </h1>
       </div>
 
-      <div className="text-white w-[20rem] text-base flex h-[3rem] justify-between items-center">
-        <a href="#skills" className="font-light hover:font-normal">Skills</a>
-        <a href="#projects" className="font-light hover:font-normal">Projects</a>
-        <a href="#contact" className="font-light hover:font-normal">Contact Me</a>
+      <div>
+        <button 
+        className="hamburger-btn hamburger rounded-full w-[1.3rem] h-[1.3rem] text-[0.8rem] lg:text-[1rem] flex justify-center items-center mr-7 relative"
+        onClick={() => sidebarHandler()}>
+          <RxHamburgerMenu />
+        </button>
       </div>
-    </div>
+
+      <div className="text-sm btn-container mr-7 hamburger font-medium relative">
+        {/* home about contact */}
+        <div className="w-max h-max on-hover">
+          <a href="#" className="w-max h-max" onClick={() => navigate("/")}>
+            Home
+          </a>
+        </div>
+
+        <div className="w-max h-max on-hover">
+          <a
+            className="w-max h-max"
+            href="#skills"
+            onClick={() => navigate("/")}
+          >
+            Skills
+          </a>
+        </div>
+
+        <div className="w-max h-max on-hover">
+          <a
+            className="w-max h-max"
+            href="#projects"
+            onClick={() => navigate("/")}
+          >
+            Projects
+          </a>
+        </div>
+
+        <div className="w-max h-max on-hover">
+          <a
+            className="w-max h-max"
+            href="#contact"
+            onClick={() => navigate("/")}
+          >
+            Contact
+          </a>
+        </div>
+      </div>
+    </nav>
   );
 }
 
