@@ -12,14 +12,15 @@ function Home(){
   const { sidebar, setSidebar } = useContext(AppContext);
   
   return(
-    <div className="pt-6 bg-[#000] min-w-[100vw] w-[100%] min-h-[100vh] h-[100%]">
-      <Navbar />
-      <Sidebar />
-      {/* <HomeMain />
-      <Projects />
-      <Skills />
+    <div className="pt-6 relative min-w-[100vw] w-[100%] min-h-[100vh] h-[100%]">
+      <div className="translucent-bg"></div>
+      {/* <Navbar /> */}
+      {/* <Sidebar /> */}
+      {/* <HomeMain /> */}
+      {/* <Projects /> */}
+      {/* <Skills /> */}
       <Contact />
-      <Footer /> */}
+      {/* <Footer /> */}
     </div>
   );
 }

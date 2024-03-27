@@ -1,64 +1,73 @@
 import React from "react";
 import { FaTelegramPlane } from "react-icons/fa";
+import emailjs from "emailjs-com";
+import toast from "react-hot-toast";
 
 function Contact() {
+  function emailSend(e) {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_cffkgsv",
+        "template_b7lgbhr",
+        e.target,
+        "dzIqOZcBgxHU9jkeT"
+      )
+      .then(
+        (result) => {
+          console.log("Successful" + result);        
+          toast.success("Message Sent!");
+        },
+        (error) => {
+          toast.error("Error!");
+          console.log("Error: " + error.text);
+        }
+      );
+  }
+
   return (
-    <div>
-      <div class="contact-form-container" id="contact">
-        <div class="container">
-          <h1 class="form-heading" id="contact">
-            Contact Me
-          </h1>
-
-          <h3 class="form-sub-heading">
-            Questions, Thoughts, Or Just Want To Say Hi?
-          </h3>
-
-          <div class="contact-me-form-container">
-            <form action="">
-              <div class="formfield-container">
-                <input
-                  class="formfield"
-                  id=""
-                  type="text"
-                  placeholder="Enter your name"
-                />
-
-                <input
-                  class="formfield"
-                  id=""
-                  type="email"
-                  placeholder="Enter your email"
-                />
-
-                <input
-                  class="formfield"
-                  id=""
-                  type="text"
-                  placeholder="Enter your subject"
-                />
-
-                <textarea
-                  class="formfield formfield-textarea"
-                  name="message"
-                  id=""
-                  cols="30"
-                  rows="10"
-                  placeholder="Enter your message"
-                ></textarea>
-              </div>
-
-              <div
-                class="btn-hire-me absolute flex gap-[10px] left-[45%]"
-                id="submit-btn"
-              >
-                Send Message
-                <FaTelegramPlane />
-              </div>
-            </form>
-          </div>
-        </div>
+    <div id="contact">
+      <div class="form-heading">
+        <h1>CONNECT</h1>
       </div>
+
+      <form onSubmit={emailSend}>
+        <div class="formfield-container">
+          <input
+            id="name"
+            name="name"
+            type="text"
+            placeholder="Enter your name"
+            required
+          />
+          <input
+            id="email"
+            name="email"
+            type="email"
+            placeholder="Enter your email"
+            required
+          />
+          <input
+            id="subject"
+            name="subject"
+            type="text"
+            placeholder="Enter your subject"
+            required
+          />
+          <textarea
+            name="msg"
+            id="msg"
+            placeholder="Enter your message"
+            required
+          ></textarea>
+        </div>
+
+        <button id="btn" type="submit">
+          Send Message
+          <FaTelegramPlane />
+        </button>
+      </form>
     </div>
   );
 }

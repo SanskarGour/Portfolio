@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import logo from "../Resources/s logo.png";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { AppContext } from "./context/AppContext";
 import { useNavigate } from "react-router-dom";
@@ -20,12 +19,13 @@ function Navbar() {
     <nav className="navbar-main mx-auto select-none relative">
       <div className="h-full flex items-center ml-7 justify-center relative">
         {/* logo and icon */}
-        <div className="w-[1rem] flex justify-center items-center rounded-full relative">
+        {/* <div className="w-[1rem] flex justify-center items-center rounded-full relative">
           <img src={logo} width="100%" />
-        </div>
+        </div> */}
 
-        <h1 className="font-medium text-[0.8rem] lg:text-[1rem]  relative">
-          ANSKAR GOUR
+        <h1 className="font-semibold text-[1rem] lg:text-[1.2rem] relative">
+          SANXKAR
+          {/* ANSKAR GOUR */}
         </h1>
       </div>
 
@@ -38,7 +38,7 @@ function Navbar() {
       </div>
 
       <div className="text-sm btn-container mr-7 hamburger font-medium relative">
-        {/* home about contact */}
+        {/* home about contact skills*/}
         <div className="w-max h-max on-hover">
           <a href="#" className="w-max h-max" onClick={() => navigate("/")}>
             Home

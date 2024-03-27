@@ -1,49 +1,64 @@
-import React from "react";
-import user from "../Resources/user.JPG";
-import circle from "../Resources/circle.png";
-import cube from "../Resources/cube.png";
-import dots from "../Resources/dots.png";
-import zigzag from "../Resources/zigzag.png";
-
+import React, { useEffect } from "react";
+// import user from "../Resources/user.JPG";
+// import user from "../Resources/user-img1.png";
+// import user from "../Resources/user-img2.png";
+import user from "../Resources/user-img3.png";
 
 function HomeMain() {
-  return (
-    <div className="border-[0.5px] rounded-xl p-10 w-[80%] mx-auto my-20 h-[450px] flex justify-between items-center">
-      <div className="flex flex-col justify-evenly h-full max-w-[500px] items-start">
-        <h2 className="text-3xl font-light">Hi!! Everyone</h2>
-        <h1 className="text-4xl">I am a Web Developer</h1>
-        <p className="text-start font-light">
-          I am a Web Developer and here is my portfolio website. Here you'll
-          learn about my journey as a software developer.
-        </p>
+  const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  let interval = null;
 
-        {/* <div class="btn-hire-me" id="btn">
-          Hire me
-        </div> */}
+  function changeChar(event) {
+    let iteration = 0;
+
+    clearInterval(interval);
+
+    interval = setInterval(() => {
+      event.target.innerText = event.target.innerText
+        .split("")
+        .map((letter, index) => {
+          if (index < iteration) {
+            return event.target.dataset.value[index];
+          }
+
+          return letters[Math.floor(Math.random() * 26)];
+        })
+        .join("");
+
+      if (iteration >= event.target.dataset.value.length) {
+        clearInterval(interval);
+      }
+
+      iteration += 1 / 3;
+    }, 30);
+  }
+
+
+  return (
+    <div className="text-white border-[0.5px] border-[#605f5f32] rounded-xl px-4 sm:px-10 w-[80%] mx-auto my-10 sm:my-20 py-[1rem] sm:py-[2rem] md:py-[3rem] flex justify-between items-center home-main z-10 relative ">
+      <div className="flex flex-col justify-evenly h-full sm:min-h-[20rem] items-start">
+        <h1 className="text-3xl">
+          <span
+            data-value="SANSKAR GOUR"
+            className="dynamic-name"
+            onMouseOver={changeChar}
+          >
+            SANSKAR GOUR
+          </span>
+        </h1>
+        <p className="text-start font-light">
+          {/* I am a Web Developer and here is my portfolio website. Here you'll
+          learn about my journey as a software developer. */}
+          "I specialize in Full Stack Web Development, excelling in React.js, 
+          alongside a strong foundation in Data Structures and Algorithms."
+        </p>
       </div>
 
-      {/* <div class="hero-section-right">
-        <div class="absolute icon icon-circle">
-          <img src={circle} />
-        </div>
-
-        <div class="absolute icon icon-cube">
-          <img src={cube} />
-        </div>
-
-        <div class="absolute icon icon-dots">
-          <img src={dots} />
-        </div>
-
-        <div class="absolute icon icon-zigzag">
-          <img src={zigzag} />
-        </div>
-
+      <div class="hero-section-right">
         <div class="user-img">
           <img src={user} />
         </div>
-      </div> */}
-
+      </div>
     </div>
   );
 }
